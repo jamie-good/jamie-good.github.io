@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Jamie C. Good</title>
@@ -14,7 +14,7 @@
                 margin: 0;
                 padding: 0;
                 font-family: "Poppins", sans-serif;
-                background-image: url('https://github.com/jamie-good/jamie-good.github.io/blob/fef081761b78d6bfc556107632ed0da7a1f79545/docs/assets/dolomites.jpeg'); /* Path to the image */
+                background-image: url('docs/assets/dolomites.jpeg'); /* Path to the image */
                 background-size: cover; /* Ensures the image covers the whole page */
                 background-position: center; /* Center the image */
                 background-repeat: no-repeat; /* Prevent image repetition */
@@ -22,8 +22,7 @@
                 justify-content: center; /* Centers horizontally */
                 align-items: center; /* Centers vertically */
                 height: 100vh; /* Full viewport height */
-                /* background-color: #f0f0f0; /* Light background for contrast  */
-                color: white; /* Text color, change as needed */
+                color: white; /* Text color */
             }
 
             .content {
@@ -33,11 +32,15 @@
             h1 {
                 font-size: 48pt;
                 margin: 0;
+                font-family: "Poppins", monospace;
+                white-space: nowrap; /* Prevent line breaks */
+                border-right: 3px solid white; /* Simulate cursor */
+                display: inline-block; /* Ensure the cursor stays next to text */
+                padding-right: 5px; /* Slight padding for the cursor */
             }
 
             nav ul {
                 font-family: "Courier", serif;
-                /* list-style-type: none; */
                 padding: 0;
             }
 
@@ -56,14 +59,14 @@
                 color: #007BFF; /* Hover effect */
             }
 
-            /* You can also style the links, etc., if needed */
         </style>
 
     </head>
 
     <body>
         <div class="content">
-            <h1>jamie c. good</h1>
+            <!-- The name is initially empty, JavaScript will fill it -->
+            <h1 id="name"></h1>
 
             <nav>
                 <ul>
@@ -72,5 +75,22 @@
                 </ul>
             </nav>
         </div>
+
+        <script>
+            // Typewriter effect function
+            const name = "jamie good";
+            let i = 0;
+
+            function typeWriter() {
+                if (i < name.length) {
+                    document.getElementById("name").innerHTML += name.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100); // Adjust typing speed (150ms per character)
+                }
+            }
+
+            // Start typing when the page loads
+            window.onload = typeWriter;
+        </script>
     </body>
 </html>
