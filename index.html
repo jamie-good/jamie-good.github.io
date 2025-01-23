@@ -14,7 +14,7 @@
                 margin: 0;
                 padding: 0;
                 font-family: "Poppins", sans-serif;
-                background-image: url('https://github.com/jamie-good/jamie-good.github.io/blob/a6ce06fb5a39a2ca385123d1317e3174639daf11/docs/assets/dolomites.jpeg'); /* Path to the image */
+                background-image: url('docs/assets/dolomites.jpeg');
                 background-size: cover; /* Ensures the image covers the whole page */
                 background-position: center; /* Center the image */
                 background-repeat: no-repeat; /* Prevent image repetition */
@@ -37,6 +37,24 @@
                 border-right: 3px solid white; /* Simulate cursor */
                 display: inline-block; /* Ensure the cursor stays next to text */
                 padding-right: 5px; /* Slight padding for the cursor */
+                transition: border-right 0.3s ease; /* Smooth transition when cursor is removed */
+            }
+
+            /* Blinking cursor animation */
+            @keyframes blink {
+                0% {
+                    border-color: white;
+                }
+                50% {
+                    border-color: transparent;
+                }
+                100% {
+                    border-color: white;
+                }
+            }
+
+            .blinking-cursor {
+                animation: blink 1s step-end infinite; /* Create the blinking effect */
             }
 
             nav ul {
@@ -85,7 +103,10 @@
                 if (i < name.length) {
                     document.getElementById("name").innerHTML += name.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 100); // Adjust typing speed (150ms per character)
+                    setTimeout(typeWriter, 150); // Adjust typing speed (100ms per character)
+                } else {
+                    // Once typing is done, add the blinking cursor class
+                    document.getElementById("name").classList.add("blinking-cursor");
                 }
             }
 
