@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Aligning items vertically */
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 20px; /* Space from the top */
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .header nav ul {
+      font-family: "Courier", serif;
+      padding: 0;
+      list-style-type: none; /* Removes bullet points */
+      display: inline-flex;
+      gap: 20px; /* Space between links */
+    }
+
+    .header nav ul li {
+      display: inline-block;
+    }
+
+    .header nav ul li a {
+      text-decoration: none;
+      color: #ffffff; /* Black color for text */
+      font-size: 18px;
+    }
+
+    .header nav ul li a:hover {
+      color: #007BFF; /* Hover effect for links */
+    }
+
+    .gallery {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px; /* Space between header and gallery */
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; /* Rounded corners for images */
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header with name and navigation -->
+  <div class="header">
+    <h1><a href="index.html" style="color: white; text-decoration: none;">jamie c. good</a></h1>
+    <nav>
+      <ul>
+        <li><a href="contact.html">portfolio</a></li>
+        <li><a href="portfolio.html">photography</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <div class="column">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/capecod.jpg?raw=true" alt="Cape Cod, MA">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/%20beachspiral.jpeg?raw=true" alt="Boston, MA">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/athabasca.jpg?raw=true" alt="Athabasca Glacier, CA">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/carerra.jpg?raw=true" alt="Colonnata, IT">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/autolevel.jpg?raw=true" alt="Athabasca Glacier, CA">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/badlands.jpg?raw=true" alt="Badlands, SD">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/tensleep.jpg?raw=true" alt="Ten Sleep, WY">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/bryce.jpg?raw=true" alt="Bryce Canyon, UT">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/zioncanyon.jpg?raw=true" alt="Zion, UT">
+    </div>
+    <div class="column">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/playinginvenice.jpg?raw=true" alt="Venice, IT">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/starfish.jpg?raw=true" alt="Metlakatla, AK">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/greenlandicpups.jpg?raw=true" alt="Kangerlussuaq, GL">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/hangingbyathread.jpg?raw=true" alt="Montreal, CA">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/balloon.jpg?raw=true" alt="Summit, GL">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/afternoonnap.jpg?raw=true" alt="Summit, GL">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/greenlandfromabove.jpg?raw=true" alt="Kangerlussuaq, GL">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/beachday.jpg?raw=true" alt="St. Augustine, FL">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/tobacco.jpg?raw=true" alt="Live Oak, FL">
+      <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/venicestreet.jpg?raw=true" alt="Venice, IT">
+    </div>
+  </div>
+
+</body>
+</html>
