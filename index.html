@@ -4,43 +4,44 @@
         <meta charset="utf-8">
         <title>jamie c. good</title>
 
+        <!-- Link to Google Fonts Poppins and Courier Prime -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         
         <style>
-            /* Add global styles */
+            /* Global styles */
             body {
                 margin: 0;
                 padding: 0;
-                font-family: "Poppins", sans-serif;
+                font-family: "Poppins", sans-serif; /* General font, unless otherwise specified */ 
                 background-image: url('https://raw.githubusercontent.com/jamie-good/jamie-good.github.io/refs/heads/main/docs/assets/dolomites.jpeg');
-                background-size: cover; /* Ensures the image covers the whole page */
-                background-position: center; /* Center the image */
-                background-repeat: no-repeat; /* Prevent image repetition */
+                background-size: cover; /* Full-page background */
+                background-position: center; 
+                background-repeat: no-repeat; 
                 display: flex;
-                justify-content: center; /* Centers horizontally */
-                align-items: center; /* Centers vertically */
+                justify-content: center; 
+                align-items: center; /
                 height: 100vh; /* Full viewport height */
-                color: white; /* Text color */
+                color: white; 
             }
 
             .content {
-                text-align: center; /* Center text */
+                text-align: center; /* Center all text */
             }
 
-            h1 {
+            h1 { /* Header specifications */ 
                 font-size: 48pt;
                 margin: 0;
                 font-family: "Poppins", monospace;
-                white-space: nowrap; /* Prevent line breaks */
+                white-space: nowrap; 
                 border-right: 3px solid white; /* Simulate cursor */ 
-                display: inline-block;  /* Ensure the cursor stays next to text */
-                padding-right: 5px; /* Slight padding for the cursor */
-                transition: border-right 0.3s ease; /* Smooth transition when cursor is removed */
+                display: inline-block;  
+                padding-right: 5px; 
+                transition: border-right 0.3s ease; 
             }
 
-            /* Blinking cursor animation */
+            /* Cursor animation */
             @keyframes blink {
                 0% {
                     border-color: white;
@@ -53,17 +54,17 @@
                 }
             }
 
-            .blinking-cursor {
-                animation: blink 1s step-end infinite; /* Create the blinking effect */
+            .blinking-cursor { /* Apply animation */ 
+                animation: blink 1s step-end infinite; 
             }
 
-            nav ul {
+            nav ul { /* Navigation styles */ 
                 font-family: "Courier", serif;
                 padding: 0;
             }
 
             nav ul li {
-                display: inline-block; /* Align items horizontally */
+                display: inline-block; 
                 margin-right: 20px;
             }
 
@@ -74,7 +75,7 @@
             }
 
             nav ul li a:hover {
-                color: #007BFF; /* Hover effect */
+                color: #007BFF; 
             }
 
         </style>
@@ -83,9 +84,10 @@
 
     <body>
         <div class="content">
-            <!-- The name is initially empty, JavaScript will fill it -->
+            <!-- Name is empty, JavaScript will fill it -->
             <h1 id="name"></h1>
 
+             <!-- Navigation links -->
             <nav>
                 <ul>
                     <li><a href="portfolio.html">portfolio</a></li>
@@ -103,9 +105,9 @@
                 if (i < name.length) {
                     document.getElementById("name").innerHTML += name.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 150); // Adjust typing speed (100ms per character)
+                    setTimeout(typeWriter, 150); // Adjust typing speed 
                 } else {
-                    // Once typing is done, add the blinking cursor class
+                    // Once typing is done, add blinking cursor
                     document.getElementById("name").classList.add("blinking-cursor");
                 }
             }

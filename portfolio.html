@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Timeline</title>
+  <title>Portfolio</title>
 
+  <!-- Google Fonts  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 
+  <!-- Internal styles  -->
   <style>
+    /* General styles */
     body {
       margin: 0;
       padding: 0;
@@ -57,7 +60,7 @@
       color: #007BFF;
     }
 
-    .timeline {
+    .timeline { /* Container for timeline */
       margin: 150px;
       padding: 20px 0;
       max-width: 600px;
@@ -65,7 +68,7 @@
       flex-grow: 1;
     }
 
-    .timeline::after {
+    .timeline::after { /* Vertical line for timeline feature */
       content: '';
       position: absolute;
       width: 4px;
@@ -77,22 +80,20 @@
     }
 
     .timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -60px; /* Adjust this to make the line shorter */
-  top: 60px; /* Adjust for vertical positioning */
-  width: 40px; /* The length of the branching line */
-  height: 4px;
-  background-color: #000; /* Color of the branch line */
-}
-
+        content: "";
+        position: absolute;
+        left: -60px;
+        top: 60px; 
+        width: 40px;
+        height: 4px;
+        background-color: #000; 
+    }
 
     .timeline-item {
       position: relative;
       padding: 20px 40px;
       width: 100%;
     }
-    
 
     .timeline-item.left {
       left: -80%;
@@ -103,23 +104,19 @@
     }
 
     .timeline-item .content {
-      padding: 20px;
-    }
-
-    .timeline-item .content {
-      opacity: 0.5; /* Default opacity when not focused */
-      filter: blur(5px); /* Apply blur */
+      padding: 20px;      
+      opacity: 0.5; /* Default opacity when not item not in focus */
+      filter: blur(5px); 
       transition: all 0.3s ease;
     }
 
     .timeline-item .content img {
-  display: block; /* Ensures the image behaves like a block-level element */
-  margin: 10px auto; /* Centers the image horizontally and adds some vertical spacing */
-  max-width: 100%; /* Ensures the image doesn't overflow its container */
-  height: auto; /* Maintains aspect ratio */
-  text-align: center; /* Aligns images within their content */
-}
-
+        display: block; 
+        margin: 10px auto; 
+        max-width: 100%;
+        height: auto; 
+        text-align: center; 
+    }
 
     .timeline-item.focused .content {
       transform: scale(1.2); /* Slight zoom effect */
@@ -131,30 +128,27 @@
     font-family: "Courier Prime", monospace;
     font-size: 48px;
     text-align: right;
-    line-height: 0.8; /* Adjust spacing between the two lines */
-    color: black; /* Customize color if necessary */
-    white-space: nowrap; /* Prevent unintended line breaks */
+    line-height: 0.8;
+    color: black; 
+    white-space: nowrap;
     }
 
     .timeline-item.left .content span {
-    display: block; /* Forces line break */
+    display: block; 
     }
 
     .timeline-item.right .content {
       text-align: left;
     }
 
+    .timeline-item-content {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-
-.timeline-item-content {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-
-    @media (max-width: 768px) {
+    @media (max-width: 768px) { /* Responsive design for mobile... */
       .timeline-item {
         width: 100%;
         padding: 20px 20px;
@@ -175,6 +169,7 @@
         left: 50%;
         transform: translateX(-50%);
       }
+
     }
   </style>
 </head>
@@ -191,9 +186,9 @@
     </nav>
   </div>
 
-
   <div class="timeline">
 
+    <!-- Timeline section! -->
     <div class="timeline-item right">
         <div class="content">
           <p> Learned <strong>SQL, R, </strong> and <strong>HTML/CSS</strong> - which I used to make this website!  </p>
@@ -206,7 +201,6 @@
         </div>
     </div>
 
-    
     <div class="timeline-item right">
         <div class="content">
           <p> <strong> Graduated from Dartmouth with my Master's in Earth Science.</strong> <br> <br>
@@ -251,7 +245,6 @@
         </div>
     </div>
 
-
     <div class="timeline-item right">
         <div class="content">
           <p> <strong> Taught at Dartmouth's Geologic Field Camp. </strong> <br> <br>   
@@ -287,7 +280,6 @@
         </div>
     </div>
 
-
     <div class="timeline-item right">
         <div class="content">
           <p> I presented my undergraduate research on the <strong> sesimology of tightly-curved 
@@ -306,7 +298,6 @@
         </p>
         </div>
     </div>
-
 
     <div class="timeline-item right">
         <div class="content">
