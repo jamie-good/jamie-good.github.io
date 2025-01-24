@@ -3,28 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Portfolio - Timeline</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: sans-serif;
+      font-family: "Poppins", sans-serif;
       background-color: #ffffff;
+      color: rgb(0, 0, 0);
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column; /* Aligning items vertically */
+      justify-content: flex-start;
+      align-items: flex-start;
       min-height: 100vh;
+      padding: 20px;
     }
 
     .header {
-      text-align: center;
-      margin-top: 20px; /* Space from the top */
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      text-align: right;
     }
 
     .header h1 {
@@ -32,21 +35,12 @@
       margin: 0;
     }
 
-    h2 {
-      font-size: 12px;
-      color: #000000; /* Black color for text */
-      font-family: "Poppins", sans-serif;
-      font-weight: 200;
-      /* font-style: italic; */
-      margin: 0;
-    }
-
     .header nav ul {
       font-family: "Courier", serif;
       padding: 0;
-      list-style-type: none; /* Removes bullet points */
+      list-style-type: none;
       display: inline-flex;
-      gap: 20px; /* Space between links */
+      gap: 20px;
     }
 
     .header nav ul li {
@@ -55,51 +49,433 @@
 
     .header nav ul li a {
       text-decoration: none;
-      color: #000000; /* Black color for text */
+      color: #000000;
       font-size: 18px;
     }
 
     .header nav ul li a:hover {
-      color: #007BFF; /* Hover effect for links */
+      color: #007BFF;
     }
 
-    .gallery {
-      display: flex;
-      gap: 30px;
-      margin-top: 30px; /* Space between header and gallery */
+    .timeline {
+      margin: 150px;
+      padding: 20px 0;
+      max-width: 600px;
+      position: relative;
+      flex-grow: 1;
     }
 
-    .column {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #000000;
+      top: 0;
+      bottom: 0;
+      left: 10%;
+      transform: translateX(-50%);
     }
 
-     img {
-      width: auto;
-      height: 100%;
-    } 
+    .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -60px; /* Adjust this to make the line shorter */
+  top: 60px; /* Adjust for vertical positioning */
+  width: 40px; /* The length of the branching line */
+  height: 4px;
+  background-color: #000; /* Color of the branch line */
+}
 
+
+    .timeline-item {
+      position: relative;
+      padding: 20px 40px;
+      width: 100%;
+    }
+    
+
+    .timeline-item.left {
+      left: -80%;
+    }
+
+    .timeline-item.right {
+      left: 20%;
+    }
+
+    .timeline-item .content {
+      padding: 20px;
+    }
+
+    .timeline-item .content {
+      opacity: 0.5; /* Default opacity when not focused */
+      filter: blur(5px); /* Apply blur */
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item .content img {
+  display: block; /* Ensures the image behaves like a block-level element */
+  margin: 10px auto; /* Centers the image horizontally and adds some vertical spacing */
+  max-width: 100%; /* Ensures the image doesn't overflow its container */
+  height: auto; /* Maintains aspect ratio */
+  text-align: center; /* Aligns images within their content */
+}
+
+
+    .timeline-item.focused .content {
+      transform: scale(1.2); /* Slight zoom effect */
+      opacity: 1;
+      filter: blur(0); /* Remove blur */
+    }
+
+    .timeline-item.left .content {
+    font-family: "Courier Prime", monospace;
+    font-size: 48px;
+    text-align: right;
+    line-height: 0.8; /* Adjust spacing between the two lines */
+    color: black; /* Customize color if necessary */
+    white-space: nowrap; /* Prevent unintended line breaks */
+    }
+
+    .timeline-item.left .content span {
+    display: block; /* Forces line break */
+    }
+
+    .timeline-item.right .content {
+      text-align: left;
+    }
+
+
+
+.timeline-item-content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        width: 100%;
+        padding: 20px 20px;
+      }
+
+      .timeline-item.left,
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item.left .content,
+      .timeline-item.right .content {
+        text-align: center;
+      }
+
+      .timeline-item.left .content::before,
+      .timeline-item.right .content::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Header with name and navigation -->
   <div class="header">
     <h1><a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">jamie c. good</a></h1>
     <nav>
       <ul>
-        <li><a href="portfolio.html">portfolio</a></li>
-        <li><a href="photography.html">photography</a></li>
+        <li><a href="contact.html">portfolio</a></li>
+        <li><a href="portfolio.html">photography</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Gallery Section -->
-  <div class="gallery">
-    <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/ChickenRidgeXSection.jpg?raw=true" alt="X-Section" >
-    <!-- <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/GhostRanchMap.jpg?raw=true" alt="Map" > -->
+
+  <div class="timeline">
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> Learned <strong>SQL, R, </strong> and <strong>HTML/CSS</strong> - which I used to make this website!  </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2025 </h1>
+        </div>
+    </div>
+
+    
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Graduated from Dartmouth with my Master's in Earth Science.</strong> <br> <br>
+              Working with <strong> Python, GIS, machine learning, </strong> 
+              and <strong> C++ </strong>, I studied the spatiotemporal trends of meter-scale 
+              surface roughness of the Greenland Ice Sheet and developed 
+              a new, on-ice laser distance meter. <br> <br> 
+              <em> Here's example figure from my thesis: </em>
+          </p>
+        <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/CompleteKrige.png?raw=true" width="400px">
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Developed an innovative instrument for surface roughness measurements. </strong>  <br> <br> 
+            This package, called the SLIVER Box, integrates a <strong> geodetic-grade GNSS unit, 
+            a nav-grade GPS unit, and an industrial LiDAR unit. </strong> I deployed it at Summit Station, Greenland, where
+            I also used other surveying techniques, including a <strong> Terrestrial Laser 
+            Scanner (TLS) and an auto-level. </strong> <br> <br> 
+            <em> Here's the pin-out of the instrument package:  </em>
+            <br> <br> 
+            <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/dataflow.png?raw=true" width="500px">
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2024 </h1>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> My master's research began to coalesce around <strong> polar surface roughness and 
+            associated instrumentation. </strong> 
+            <br> <br> 
+            <em> Here's my 2023 AGU poster on those topics: </em>
+            <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/AGUPoster2023.jpg?raw=true">
+        </p>
+        </div>
+    </div>
+
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Taught at Dartmouth's Geologic Field Camp. </strong> <br> <br>   
+            I <strong> taught geophysical techniques and geologic mapping  </strong> 
+            in the Canadian Rockies and American West, ensuring <strong> participant 
+            wellbeing in backcountry scenarios.  </strong>
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Completed the first field season of my master's at Summit Station, Greenland. </strong> <br> <br>    
+            
+            At Summit, I <strong> developed and tested five laser distance meters </strong> for
+            polar surface roughness measurement capabilities. I also worked with <strong> radiosondes and an ApRES system. </strong> 
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Attended CUAHSI's Snow Measurement Field School. </strong> <br> <br> 
+            In this program, I learned a variety of field techniques, including
+            <strong> photogrammetry, snow pit excavation + stratigraphy, LiDAR, and spectroscopy. </strong>
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2023 </h1>
+        </div>
+    </div>
+
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> I presented my undergraduate research on the <strong> sesimology of tightly-curved 
+            subduction zones </strong> at AGU in 2022. <br> <br> 
+            <em> Here's my poster: </em>
+            <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/AGUPoster2022.jpg?raw=true">
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Started my Master's in Earth Science at Dartmouth. </strong> <br> <br> 
+            I spent several months exploring different research topics, ranging from 
+         peripheral ice caps observed with ICESat-2 to glacial isostatic rebound via GNSS.
+        </p>
+        </div>
+    </div>
+
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Spent the summer working on a vineyard. </strong> <br> <br> 
+            
+            As a farmhand in the New York Finger Lakes region, I learned about  <strong> small business 
+            organization </strong> and <strong> alternative farming practices </strong>.  
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Graduated Summa Cum Laude from the University of Florida with degrees in Math and Geology. </strong>
+            <br> <br> 
+            
+            My thesis was on the topic of seismic moment release in tightly-curved subduction zones, research for 
+            which I <strong> received multiple scholarships and recognition awards. </strong> <br> <br> 
+            <em> Here's an example figure from my thesis: </em>
+            <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/MarianaFig.png?raw=true">
+        </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2022 </h1>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Worked in an isotopic geochemistry lab. </strong> <br> <br> 
+            I analyzed  environmental samples from the Colorado Smelter Superfund Site, using <strong> 
+            long- and short-column chemistry and an ICP-MS </strong> to determine the origins of 
+            elevated lead levels in surrounding communities. 
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Completed UF's geologic field camp. </strong> <br> <br> 
+            <em> Here's some of my favorite work from this course: </em>
+            <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/ChickenRidgeXSection.jpg?raw=true">
+            <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/FieldCampGhostRanch.png?raw=true" width="500px">
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2021 </h1>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Performed research with UF's Dynamics and Materials Group. </strong> <br> <br> 
+
+            In this role, I examined the seismic deformation of tightly-curved subduction zones,
+            using  <strong> MATLAB, GMT, and Bash/CLI </strong>. 
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Became the Outreach Coordinator for UF GeoGators and Field Trip Leader for UF GeoClubs. </strong> <br> <br> 
+            
+            As Outreach Coordinator, I worked with local schools and other participating institutions to provide
+            <strong> hands-on, geoscience short courses in classrooms and museums, </strong> fostering public 
+            engagement and interest in the geosciences. 
+            <br> 
+            <br> 
+            As a Field Trip Leader, <strong> I planned and led regional geologic field trips, </strong> 
+            along with quarterly professional development seminars. 
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Worked as a Caretake + Sales Associate at Nobles Greenhouse and Plant Nursery. </strong> <br> <br> 
+            I maintained stock and provided customers with <strong> personalized gardening advice based on their 
+            landscape, soil composition, and USDA growing zone. </strong>
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2020 </h1>
+        </div>
+    </div>   
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong> Worked as a Summer Camp Counselor. </strong>  <br> <br> 
+            I mentored groups of students, ages 6 through 16, ensuring their physical and emotional wellbeing while 
+            functioning as a lifeguard and art instructor. 
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> <strong>  Performed research with UF's Paleoclimatology and Oceanography Group. </strong>  <br> <br> 
+            
+            I identified planktonic formanifera from Southern Ocean sediment cores and titrated water samples, 
+            both of which were used as proxies for paleocirculation. 
+          </p>
+        </div>
+    </div>
+    
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2019 </h1>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p>  <strong> Began studying Geology and Mathematics at the University of Florida. </strong>
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p> Interned at the <strong> Suwannee River Water Managent District </strong>, 
+            digitizing files and performing data entry in Excel. 
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item right">
+        <div class="content">
+          <p>  <strong> Graduated valedictorian from my local high school. </strong>
+          </p>
+        </div>
+    </div>
+
+    <div class="timeline-item left">
+        <div class="content">
+          <h1> 2018 </h1>
+        </div>
+    </div>
+
   </div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('focused');
+        } else {
+          entry.target.classList.remove('focused');
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  </script>
 
 </body>
 </html>
