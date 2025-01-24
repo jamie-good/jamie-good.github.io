@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Aligning items vertically */
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 20px; /* Space from the top */
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 12px;
+      color: #000000; /* Black color for text */
+      font-family: "Poppins", sans-serif;
+      font-weight: 200;
+      /* font-style: italic; */
+      margin: 0;
+    }
+
+    .header nav ul {
+      font-family: "Courier", serif;
+      padding: 0;
+      list-style-type: none; /* Removes bullet points */
+      display: inline-flex;
+      gap: 20px; /* Space between links */
+    }
+
+    .header nav ul li {
+      display: inline-block;
+    }
+
+    .header nav ul li a {
+      text-decoration: none;
+      color: #000000; /* Black color for text */
+      font-size: 18px;
+    }
+
+    .header nav ul li a:hover {
+      color: #007BFF; /* Hover effect for links */
+    }
+
+    .gallery {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px; /* Space between header and gallery */
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px; /* Rounded corners for images */
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header with name and navigation -->
+  <div class="header">
+    <h1><a href="index.html" style="color: rgb(0, 0, 0); text-decoration: none;">jamie c. good</a></h1>
+    <nav>
+      <ul>
+        <li><a href="contact.html">portfolio</a></li>
+        <li><a href="portfolio.html">photography</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/ChickenRidgeXSection.jpg?raw=true" alt="X-Section">
+    <img src="https://github.com/jamie-good/jamie-good.github.io/blob/main/docs/assets/GhostRanchMap.jpg?raw=true" alt="Map">
+  </div>
+
+</body>
+</html>
