@@ -14,57 +14,57 @@
             body {
                 margin: 0;
                 padding: 0;
-                font-family: "Poppins", sans-serif; /* General font, unless otherwise specified */ 
+                font-family: "Poppins", sans-serif;
                 background-image: url('https://raw.githubusercontent.com/jamie-good/jamie-good.github.io/refs/heads/main/docs/assets/dolomites.jpeg');
-                background-size: cover; /* Full-page background */
-                background-position: center; 
-                background-repeat: no-repeat; 
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
                 display: flex;
-                justify-content: center; 
-                align-items: center; /
-                height: 100vh; /* Full viewport height */
-                color: white; 
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                color: white;
             }
 
             .content {
-                text-align: center; /* Center all text */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
-            h1 { /* Header specifications */ 
+            h1 {
                 font-size: 48pt;
                 margin: 0;
                 font-family: "Poppins", monospace;
-                white-space: nowrap; 
-                border-right: 3px solid white; /* Simulate cursor */ 
-                display: inline-block;  
-                padding-right: 5px; 
-                transition: border-right 0.3s ease; 
+                white-space: nowrap;
+                border-right: 3px solid white;
+                display: inline-block;
+                padding-right: 5px;
+                transition: border-right 0.3s ease;
             }
 
             /* Cursor animation */
             @keyframes blink {
-                0% {
-                    border-color: white;
-                }
-                50% {
-                    border-color: transparent;
-                }
-                100% {
-                    border-color: white;
-                }
+                0% { border-color: white; }
+                50% { border-color: transparent; }
+                100% { border-color: white; }
             }
 
-            .blinking-cursor { /* Apply animation */ 
-                animation: blink 1s step-end infinite; 
+            .blinking-cursor {
+                animation: blink 1s step-end infinite;
             }
 
-            nav ul { /* Navigation styles */ 
-                font-family: "Courier", serif;
+            nav ul {
+                font-family: "Courier Prime", monospace;
                 padding: 0;
+                list-style: none;
+                margin-top: 20px;
             }
 
             nav ul li {
-                display: inline-block; 
+                display: inline-block;
                 margin-right: 20px;
             }
 
@@ -75,19 +75,14 @@
             }
 
             nav ul li a:hover {
-                color: #007BFF; 
+                color: #007BFF;
             }
-
         </style>
-
     </head>
 
     <body>
         <div class="content">
-            <!-- Name is empty, JavaScript will fill it -->
             <h1 id="name"></h1>
-
-             <!-- Navigation links -->
             <nav>
                 <ul>
                     <li><a href="portfolio.html">portfolio</a></li>
@@ -97,7 +92,6 @@
         </div>
 
         <script>
-            // Typewriter effect function
             const name = "jamie c. good";
             let i = 0;
 
@@ -105,14 +99,12 @@
                 if (i < name.length) {
                     document.getElementById("name").innerHTML += name.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 150); // Adjust typing speed 
+                    setTimeout(typeWriter, 150);
                 } else {
-                    // Once typing is done, add blinking cursor
                     document.getElementById("name").classList.add("blinking-cursor");
                 }
             }
 
-            // Start typing when the page loads
             window.onload = typeWriter;
         </script>
     </body>
